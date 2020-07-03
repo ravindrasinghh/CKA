@@ -1,0 +1,23 @@
+STEP1:
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && chmod +x minikube
+STEP2:
+sudo mkdir -p /usr/local/bin/
+STEP:3
+sudo install minikube /usr/local/bin/
+
+DOCKER INSTALLATION:
+yum -y install docker
+systemctl start docker
+systemctl enable docker
+
+Minikube installation:
+minikube start --vm-driver=none --extra-config=kubelet.cgroup-driver=systemd
+
+Official Documentation for Kubectl
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+
+kubectl get nodes
